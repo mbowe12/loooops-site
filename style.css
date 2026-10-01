@@ -1,0 +1,106 @@
+:root {
+  --bg: #e3e3e3;
+  --ink: #000;
+  --mono: ui-monospace, "SF Mono", "Roboto Mono", "JetBrains Mono", "Menlo", "Consolas", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--mono);
+}
+
+.page {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 6vw 7vw 10vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  margin: 0 0 3rem;
+  font-weight: 200;
+  font-size: clamp(2.5rem, 7vw, 4rem);
+  letter-spacing: 0.3em;
+  text-align: center;
+}
+
+.copy {
+  width: 100%;
+  max-width: 44rem;
+  margin: 0 0 4rem;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.hero-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 6rem;
+}
+
+.hero {
+  width: 100%;
+  aspect-ratio: 800 / 474;
+  margin: 0;
+  box-shadow:
+    0 4px 8px 3px rgba(0, 0, 0, 0.15),
+    0 1px 3px 0 rgba(0, 0, 0, 0.3);
+}
+
+.hero-frame {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #000;
+}
+
+.device-photo {
+  position: absolute;
+  z-index: 2;
+  width: 38%;
+  right: -6%;
+  bottom: -18%;
+}
+
+.device-photo__glow {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(40px);
+  opacity: 0.9;
+  transform: scale(1.15);
+  z-index: 1;
+}
+
+.device-photo__img {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 640px) {
+  .title {
+    letter-spacing: 0.18em;
+  }
+
+  .device-photo {
+    width: 42%;
+    right: -7%;
+    bottom: -16%;
+  }
+}
